@@ -1,0 +1,169 @@
+@import 'variables';
+@import 'mixins';
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Base styles
+body {
+  @include font-style('primary');
+  background-color: color('main');
+  color: color('text-on-main');
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// Common header styles
+header {
+  @include header-base;
+  @include flex(row, flex-start, center);
+  padding: 0 map-get($container-padding, 'desktop');
+  font-family: map-get($fonts, 'secondary');
+  opacity: map-get($opacity-levels, 'high');
+  backdrop-filter: blur(5px);
+}
+
+// Logo styles
+.logo-container {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  pointer-events: none;
+
+  img {
+    @include image-cover;
+  }
+
+  @include respond-to('tablet') {
+    pointer-events: auto;
+  }
+}
+
+// Navigation styles
+.nav-links {
+  @include flex;
+  list-style: none;
+  margin-left: auto;
+
+  li {
+    margin-left: 20px;
+  }
+
+  a {
+    color: color('text-on-main');
+    text-decoration: none;
+    font-size: 18px;
+    transition: color map-get($transition-speed, 'normal') ease;
+
+    &:hover {
+      color: color('gray');
+    }
+  }
+
+  @include respond-to('tablet') {
+    display: none;
+    position: absolute;
+    top: $header-height;
+    left: 0;
+    width: 100%;
+    background-color: color('main');
+    flex-direction: column;
+    padding: 20px 0;
+    z-index: map-get($z-layers, 'dropdown');
+
+    &.active {
+      @include flex(column);
+    }
+
+    li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+}
+
+// Burger menu
+.burger {
+  display: none;
+  cursor: pointer;
+  margin-left: 20px;
+  width: 30px;
+
+  div {
+    width: 100%;
+    height: 3px;
+    background-color: color('text-on-main');
+    margin: 5px 0;
+    transition: all map-get($transition-speed, 'normal') ease;
+  }
+
+  @include respond-to('tablet') {
+    display: block;
+    margin-left: auto;
+
+    &.active {
+      .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+      .line2 { opacity: 0; }
+      .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+    }
+  }
+}
+
+// Footer styles
+footer {
+  margin-top: auto;
+  padding: 20px 5%;
+  background-color: color('main');
+  @include flex(row, space-between, flex-start);
+  color: color('text-on-main');
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px map-get($container-padding, 'tablet');
+  }
+}
+
+.footer-address,
+.footer-contact {
+  flex: 1;
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  @include respond-to('tablet') {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+.footer-contact {
+  a {
+    color: color('text-on-main');
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Title styles
+.title {
+  color: color('text-on-main');
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+
+  @include respond-to('tablet') {
+    display: none;
+  }
+} 

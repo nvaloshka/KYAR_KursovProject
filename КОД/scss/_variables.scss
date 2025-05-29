@@ -1,0 +1,62 @@
+// Colors
+$colors: (
+  'main': #21560D,
+  'main-light': #2d7312,
+  'main-dark': #163b08,
+  'text-on-main': #ffffff,
+  'white': #ffffff,
+  'black': #000000,
+  'gray': #ddd
+);
+
+// Breakpoints
+$breakpoints: (
+  'mobile': 480px,
+  'tablet': 768px,
+  'desktop-sm': 900px,
+  'desktop': 1200px
+);
+
+// Typography
+$fonts: (
+  'primary': ('Times New Roman', Times, serif),
+  'secondary': (Arial, sans-serif)
+);
+
+// Layout
+$header-height: 70px;
+$container-padding: (
+  'desktop': 40px,
+  'tablet': 20px,
+  'mobile': 15px
+);
+
+// Z-indexes
+$z-layers: (
+  'modal': 1000,
+  'header': 1000,
+  'dropdown': 900,
+  'content': 1
+);
+
+// Transitions
+$transition-speed: (
+  'fast': 0.2s,
+  'normal': 0.3s,
+  'slow': 0.5s
+);
+
+// Border radius
+$border-radius: (
+  'small': 10px,
+  'medium': 20px,
+  'large': 30px,
+  'circle': 50%
+);
+
+// Opacity levels
+$opacity-levels: (
+  'light': 0.1,
+  'medium': 0.5,
+  'high': 0.9
+); 

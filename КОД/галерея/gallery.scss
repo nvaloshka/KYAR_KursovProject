@@ -1,0 +1,108 @@
+@import '../scss/variables';
+@import '../scss/mixins';
+@import '../scss/base';
+
+.gallery {
+  @include grid(3, 20px);
+  padding: 20px 5%;
+  @include container;
+  margin: ($header-height + 20px) auto 0;
+
+  @include respond-to('tablet') {
+    @include grid(1, 20px);
+    padding: 20px map-get($container-padding, 'tablet');
+  }
+
+  @include respond-to('mobile') {
+    padding: 20px map-get($container-padding, 'mobile');
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  border-radius: map-get($border-radius, 'small');
+  cursor: pointer;
+  transition: transform map-get($transition-speed, 'fast') ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.modal {
+  @include fixed-full;
+  display: none;
+  background-color: rgba(color('black'), 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: map-get($z-layers, 'modal');
+
+  &.active {
+    @include flex(row, center, center);
+  }
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: map-get($border-radius, 'small');
+}
+
+.close {
+  @include position(absolute, 20px, 30px);
+  font-size: 30px;
+  color: color('main');
+  cursor: pointer;
+}
+
+.nav-arrows {
+  @include position(absolute, 50%);
+  width: 100%;
+  @include flex(row, space-between);
+  padding: 0 20px;
+  transform: translateY(-50%);
+}
+
+%nav-arrow {
+  color: color('white');
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(color('main'), map-get($opacity-levels, 'high'));
+  border-radius: map-get($border-radius, 'small');
+  transition: background-color map-get($transition-speed, 'normal') ease;
+
+  &:hover {
+    background-color: rgba(color('main-light'), map-get($opacity-levels, 'high'));
+  }
+}
+
+.prev {
+  @extend %nav-arrow;
+}
+
+.next {
+  @extend %nav-arrow;
+}
+
+// Animations
+@include keyframes(fadeIn) {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@include keyframes(slideIn) {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-image {
+  @include animate('slideIn', 'normal');
+} 

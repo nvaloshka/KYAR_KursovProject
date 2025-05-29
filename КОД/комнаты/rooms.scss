@@ -1,0 +1,82 @@
+@import '../scss/variables';
+@import '../scss/mixins';
+@import '../scss/base';
+
+.room-catalog {
+  min-height: 100vh;
+  @include flex(column);
+}
+
+// Room Grid Styles
+.room-grid {
+  margin-top: $header-height + 20px;
+  @include container;
+  padding: 0 map-get($container-padding, 'desktop');
+
+  @include respond-to('tablet') {
+    padding: 0 map-get($container-padding, 'tablet');
+  }
+
+  @include respond-to('mobile') {
+    padding: 0 map-get($container-padding, 'mobile');
+  }
+}
+
+.room-row {
+  @include flex;
+  gap: 20px;
+  margin-bottom: 40px;
+
+  @include respond-to('desktop-sm') {
+    flex-direction: column;
+  }
+}
+
+.room-card {
+  flex: 1;
+  @include card($padding: 0, $radius: 'medium', $bg-color: 'white', $opacity: 'light');
+  @include hover-lift;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  @include respond-to('desktop-sm') {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @include respond-to('mobile') {
+    margin-bottom: 20px;
+  }
+}
+
+.room-image-container {
+  position: relative;
+  @include aspect-ratio(4, 3);
+}
+
+.room-image {
+  @include position(absolute, 0, 0, 0, 0);
+  @include image-cover;
+}
+
+.room-price {
+  @include position(absolute, null, null, 20px, 20px);
+  background-color: rgba(color('main'), map-get($opacity-levels, 'high'));
+  color: color('white');
+  padding: 8px 16px;
+  border-radius: map-get($border-radius, 'small');
+  font-weight: bold;
+}
+
+.room-title {
+  padding: 20px;
+  @include font-style('primary', 18px, normal, 1.5);
+  color: color('white');
+  text-align: center;
+
+  @include respond-to('mobile') {
+    font-size: 16px;
+  }
+} 

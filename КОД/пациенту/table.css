@@ -1,0 +1,31 @@
+body{
+    color: rgb(189, 174, 155);
+}
+type{
+    background-color:#1A3E0C;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: auto;
+}
+name{
+    background-color: #1A3E0C;
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    margin: auto;
+    font-size: 44px;
+    border-color: darkgreen;
+    color:rgb(246, 235, 220);
+}
+disease{
+    background-color: #21560D;
+    display: flex;
+    width:95%;
+    flex-direction: column;
+    margin: auto; 
+    font-size: 30px;
+}
+body, type, name, disease {
+    display: block !important;
+}

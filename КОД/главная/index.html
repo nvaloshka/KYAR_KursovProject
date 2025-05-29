@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Санаторий "Энергетик"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="room-catalog">
+        <header>
+            <a href="index.html" class="logo-container">
+                <img src="../../ФАЙЛЫ ДЛЯ КУРСОВОЙ/фото для оформления страниц/swan.svg" alt="Logo">
+            </a>
+            <a href="index.html" class="title">Санаторий "Энергетик"</a>
+            <ul class="nav-links">
+                <li><a href="../комнаты/rooms.html">Проживание</a></li>
+                <li><a href="../пациенту_б/patient.html">Пациенту</a></li>
+                <li><a href="../галерея/gallery.html">Галерея</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="content">
+                <div class="hero">
+                    <p class="hero__text">
+                        Санаторий Энергетик — это идеальное место для отдыха и оздоровления. 
+                        Он расположен в сосновом бору вблизи Волпянского водохранилища, что 
+                        создаёт уникальную атмосферу спокойствия и умиротворения.
+                    </p>
+                    <section class="booking">
+                        <form class="booking__form">
+                            <div class="booking__inputs">
+                                <div class="booking__input-group">
+                                    <label for="check-in">Заезд</label>
+                                    <div class="input-with-icon">
+                                        <input type="date" id="check-in" class="booking__input" />
+                                    </div>
+                                </div>
+                                <div class="booking__input-group">
+                                    <label for="check-out">Выезд</label>
+                                    <input type="date" id="check-out" class="booking__input" />
+                                </div>
+                                <div class="booking__input-group">
+                                    <label for="guests">Количество гостей</label>
+                                    <input type="number" id="guests" min="1" class="booking__input booking__input--small" />
+                                </div>
+                            </div>
+                            <button class="booking__button">Заказать</button>
+                        </form>
+                    </section>
+                </div>
+
+                <section class="description">
+                    <p class="description__text">
+                        Санаторий Энергетик - один из ведущих санаториев Белоруси, настоящий источник сил, 
+                        здоровья и отличного настроения. Он расположен в сосновом бору вблизи Волпянского 
+                        водохранилища, в 115 км от трассы Брест — Москва, в 50 км от Гродно, в 230 км от 
+                        Бреста, в 300 км от Минска, в экологически чистом районе Гродненской области. 
+                        Здесь созданы все условия для круглогодичного лечения и отдыха, а прекрасная 
+                        спортивная и развлекательная база помогает провести время не только полезно, 
+                        но и интересно. Новые, красивые корпуса, с любовью ухоженная территория, 
+                        удобный проезд и традиционное белорусское радушие гарантируют, что побывав у 
+                        нас однажды, вам обязательно захочется приехать снова.
+                        </p>
+                        <p class="description__text">
+                        Лечение в Санатории Энергетик одновременно могут проходить до 300 отдыхающих. 
+                        На территории санатория расположено 8 спальных корпусов, с лоджий которых 
+                        открывается прекрасный вид на сосновый лес. Помимо стандартных номеров имеются 
+                        номера класса «Люкс». Ценителям уединения и особого комфорта санаторий предлагает 
+                        проживание в многокомнатных двухэтажных коттеджах.
+                        </p>
+                </section>
+
+                <section class="reviews">
+                    <h2>ОТЗЫВЫ</h2>
+                    <div class="review-cards-container">
+                        <div class="review-card">
+                            <img src="../../ФАЙЛЫ ДЛЯ КУРСОВОЙ/фото территория/hotel_6037_63232_kottedszh_5.jpg" alt="Аватар" class="review-avatar">
+                            <h3>Elena, 22</h3>
+                            <p>Прекрасный санаторий! Отличное обслуживание, персонал очень доброжелательный. 
+                                Территория просто высший класс.</p>
+                        </div>
+                        <div class="review-card">
+                            <img src="../../ФАЙЛЫ ДЛЯ КУРСОВОЙ/фото территория/hotel_6037_63232_kottedszh_5.jpg" alt="Аватар" class="review-avatar">
+                            <h3>Irina, 1990</h3>
+                            <p>"Санаторий 'Энергетик' — это просто рай для отдыха и восстановления! Персонал настолько внимательный, 
+                                что чувствуешь себя как дома. Территория утопает в зелени и цветах.</p>
+                        </div>
+                        <div class="review-card">
+                            <img src="../../ФАЙЛЫ ДЛЯ КУРСОВОЙ/фото территория/hotel_6037_63232_kottedszh_5.jpg" alt="Аватар" class="review-avatar">
+                            <h3>Boris, 2345</h3>
+                            <p>"Если хотите идеального сочетания отдыха и оздоровления — вам в 'Энергетик'! Здесь всё продумано до мелочей: 
+                                от шикарных номеров до безупречного сервиса. Территория просто потрясающая.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-address">
+                <h3>Как к нам добраться</h3>
+                <p>
+                    Республика Беларусь,<br>
+                    Гродненская область,<br>
+                    Волковысский район,<br>
+                    300 метров от деревни Ковали
+                </p>
+            </div>
+            <div class="footer-contact">
+                <h3>Контакты</h3>
+                <a href="tel:+375291111111">+375 29 111 11 11</a>
+                <a href="tel:+375291111111">+375 29 111 11 11</a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

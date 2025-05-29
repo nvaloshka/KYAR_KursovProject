@@ -1,0 +1,332 @@
+@import '../scss/variables';
+@import '../scss/mixins';
+@import '../scss/base';
+
+// Main layout
+.main {
+  position: relative;
+  min-height: 100vh;
+  padding-top: $header-height;
+}
+
+.content {
+  position: relative;
+  z-index: map-get($z-layers, 'content');
+  @include container;
+}
+
+// Hero section
+%hero-base {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: color('white');
+}
+
+.hero {
+  @extend %hero-base;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  left: 0;
+  @include flex(column, space-between);
+  padding: $header-height 0 40px 0;
+  background-image: url('../../ФАЙЛЫ ДЛЯ КУРСОВОЙ/фото территория/hotel_6037_63232_kottedszh_5.jpg');
+
+  @include respond-to('tablet') {
+    min-height: 100vh;
+    padding: 90px 0 20px;
+  }
+}
+
+%hero-text-base {
+  @include card($padding: 30px, $radius: 'medium', $bg-color: 'white', $opacity: 'high');
+  color: color('black');
+  z-index: map-get($z-layers, 'content');
+}
+
+.hero__text {
+  @extend %hero-text-base;
+  max-width: 400px;
+  margin: 40px auto 0 20px;
+  font-size: 20px;
+  line-height: 1.5;
+
+  @include respond-to('tablet') {
+    margin: 20px 20px 0;
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+// Booking section
+.booking {
+  width: 100%;
+  padding: 40px 20px 0;
+  z-index: map-get($z-layers, 'content');
+
+  @include respond-to('tablet') {
+    padding: 20px;
+  }
+}
+
+.booking__form {
+  @include container;
+  @include card($padding: 20px, $radius: 'large', $bg-color: 'white', $opacity: 'high');
+  @include flex(row, flex-start, stretch, nowrap);
+  gap: 20px;
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+.booking__inputs {
+  flex-grow: 1;
+  @include flex(row, flex-start, stretch, nowrap);
+  gap: 20px;
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+}
+
+.booking__input-group {
+  @include flex(column);
+  flex: 1;
+  gap: 8px;
+
+  label {
+    @include font-style('primary', 18px, 700);
+    color: color('black');
+
+    @include respond-to('tablet') {
+      font-size: 16px;
+    }
+  }
+
+  @include respond-to('tablet') {
+    width: 100%;
+  }
+}
+
+.input-with-icon {
+  position: relative;
+  @include flex(row, flex-start, center);
+}
+
+%input-base {
+  height: 40px;
+  width: 100%;
+  background-color: #f3f4f6;
+  border-radius: map-get($border-radius, 'medium');
+  border: none;
+  padding: 0 15px;
+}
+
+.booking__input {
+  @extend %input-base;
+
+  &--small {
+    max-width: 120px;
+
+    @include respond-to('tablet') {
+      max-width: none;
+    }
+  }
+
+  @include respond-to('tablet') {
+    width: 100%;
+    max-width: none;
+  }
+
+  @include respond-to('mobile') {
+    height: 36px;
+    font-size: 14px;
+  }
+}
+
+.booking__calendar {
+  @include position(absolute, null, 10px);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.booking__button {
+  @include button-base;
+  align-self: flex-end;
+  padding: 15px 40px;
+  @include font-style('primary', 20px, 700);
+  color: color('text-on-main');
+  background-color: color('main');
+  border-radius: map-get($border-radius, 'medium');
+  margin-top: auto;
+
+  &:hover {
+    background-color: color('main-light');
+  }
+
+  @include respond-to('tablet') {
+    width: 100%;
+    align-self: center;
+    margin-top: 10px;
+    padding: 12px 30px;
+  }
+
+  @include respond-to('mobile') {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+// Description section
+.description {
+  background-color: color('main');
+  padding: 40px 20px;
+  margin-top: 0;
+}
+
+.description__text {
+  @include container;
+  padding: 0 20px;
+  @include font-style('primary', 18px, normal, 1.6);
+  color: color('white');
+
+  @include respond-to('tablet') {
+    font-size: 18px;
+  }
+
+  @include respond-to('mobile') {
+    font-size: 16px;
+  }
+}
+
+// Reviews section
+.reviews {
+  margin-top: 60px;
+  @include flex(column, flex-start, center);
+  gap: 20px;
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: color('white');
+    text-align: center;
+  }
+}
+
+.review-cards-container {
+  @include flex(row, center);
+  gap: 40px;
+  width: 100%;
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.review-card {
+  @include card($padding: 20px, $radius: 'medium', $bg-color: 'white', $opacity: 'high');
+  width: calc(33.33% - 27px);
+  aspect-ratio: 1.2;
+  color: color('black');
+  @include flex(column, flex-start, center);
+  @include animate('fadeInUp', 'slow');
+  @include hover-lift;
+  @include shadow(2);
+
+  @include respond-to('tablet') {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: map-get($border-radius, 'circle');
+  margin-bottom: 10px;
+}
+
+.review-card {
+  h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  p {
+    @include font-style('primary', 16px, normal, 1.4);
+    text-align: center;
+    flex-grow: 1;
+    @include flex(row, center, center);
+    margin: 0;
+  }
+}
+
+// Hero section styles
+.hero-section {
+  @extend %hero-base;
+}
+
+.hero-content {
+  @extend %hero-text-base;
+  max-width: 800px;
+  padding: 40px;
+  margin: 0 20px;
+
+  p {
+    color: color('black');
+    @include font-style('primary', 24px, normal, 1.5);
+    text-align: center;
+    margin: 0;
+  }
+
+  @include respond-to('tablet') {
+    padding: 20px;
+    margin: 0 10px;
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+// Animations
+@include keyframes(fadeIn) {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@include keyframes(slideUp) {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeInUp) {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
