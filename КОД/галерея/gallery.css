@@ -198,41 +198,28 @@ footer {
   margin-left: auto;
   margin-right: auto;
   padding-left: 40px;
-  padding-right: 40px;
-  margin: 90px auto 0;
+  padding-top: 90px;
 }
 @media screen and (max-width: 768px) {
   .gallery {
-    padding-left: 20px;
-    padding-right: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 90px 20px 20px;
   }
 }
 @media screen and (max-width: 480px) {
   .gallery {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    padding: 20px 20px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .gallery {
-    padding: 20px 15px;
+    grid-template-columns: 1fr;
+    padding: 90px 15px 15px;
   }
 }
 
 .gallery-image {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 .gallery-image:hover {
   transform: scale(1.05);
