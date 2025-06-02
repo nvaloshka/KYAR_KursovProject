@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -32,7 +32,7 @@ header {
   align-items: center;
   flex-wrap: nowrap;
   padding: 0 40px;
-  font-family: Arial, sans-serif;
+  font-family: Consolas, monospace;
   opacity: 0.9;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -347,7 +347,7 @@ footer {
   gap: 8px;
 }
 .booking__input-group label {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
@@ -419,7 +419,7 @@ footer {
   transition: all 0.3s ease;
   align-self: flex-end;
   padding: 15px 40px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
@@ -460,7 +460,7 @@ footer {
   padding-left: 40px;
   padding-right: 40px;
   padding: 0 20px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 18px;
   font-weight: normal;
   line-height: 1.6;
@@ -560,7 +560,7 @@ footer {
   text-align: center;
 }
 .review-card p {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.4;
@@ -581,7 +581,7 @@ footer {
 }
 .hero-content p {
   color: #000000;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 24px;
   font-weight: normal;
   line-height: 1.5;

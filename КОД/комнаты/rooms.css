@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -31,7 +31,7 @@ header {
   align-items: center;
   flex-wrap: nowrap;
   padding: 0 40px;
-  font-family: Arial, sans-serif;
+  font-family: Consolas, monospace;
   opacity: 0.9;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -306,7 +306,7 @@ footer {
 
 .room-title {
   padding: 20px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Consolas, monospace;
   font-size: 18px;
   font-weight: normal;
   line-height: 1.5;

@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Consolas;
   background-color: var(--main-color);
   min-height: 100vh;
   color: var(--text-on-main);
@@ -37,7 +37,7 @@ header {
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 1000;
-  font-family: Arial, sans-serif;
+  font-family: Consolas, monospace;
 }
 
 .logo-container {
